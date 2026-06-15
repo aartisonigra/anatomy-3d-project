@@ -252,7 +252,16 @@ export default function DashboardScreen({ navigation, onLogout }) {
             <Text style={styles.quizLaunchBtnText}>🎯 Start Live Quiz</Text>
           </TouchableOpacity>
 
+          {/* 🔴 Start Live Vitals */}
+          <TouchableOpacity 
+            style={[styles.quizLaunchBtn, { backgroundColor: '#111827', borderWidth: 1, borderColor: '#00f0ff' }]}
+            onPress={() => navigation.navigate('LiveVitals')}
+          >
+            <Text style={[styles.quizLaunchBtnText, { color: '#00f0ff' }]}>🩺 Open Live Vitals</Text>
+          </TouchableOpacity>
+
           <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
+
             <View style={styles.infoContentBox}>
               <Text style={styles.infoSectionTitle}>Clinical Overview</Text>
               <Text style={styles.infoBodyText}>{fullScreenModel.desc}</Text>
@@ -585,8 +594,7 @@ const styles = StyleSheet.create({
   panelInputBox: { flexDirection: 'row', gap: 8, borderTopWidth: 1, borderColor: '#1E2633', paddingTop: 15, marginTop: 10 },
   panelTextInput: { flex: 1, height: 38, backgroundColor: '#070A0F', borderWidth: 1, borderColor: '#1E2633', borderRadius: 4, paddingHorizontal: 12, color: '#fff', fontSize: 13 },
   panelSendBtn: { backgroundColor: '#00f0ff', width: 38, height: 38, borderRadius: 4, justifyContent: 'center', alignItems: 'center' },
-  
-  // ✨ નવું ક્વિઝ બટન સ્ટાઇલ
+
   quizLaunchBtn: { backgroundColor: '#00f0ff', paddingVertical: 12, borderRadius: 4, alignItems: 'center', marginBottom: 15 },
   quizLaunchBtnText: { color: '#0B1020', fontSize: 14, fontWeight: '900' }
 });

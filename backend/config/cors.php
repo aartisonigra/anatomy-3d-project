@@ -6,13 +6,19 @@ return [
     |--------------------------------------------------------------------------
     | Cross-Origin Resource Sharing (CORS) Configuration
     |--------------------------------------------------------------------------
+    |
+    | Here you may configure your settings for cross-origin resource sharing
+    | or "CORS". This determines what cross-origin operations may execute
+    | in web browsers. You are free to adjust these settings as needed.
+    |
     */
 
     'paths' => ['api/*', 'sanctum/csrf-cookie', 'login', 'register', 'google-login'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:8081'], // વેબ/મોબાઈલ માટે પરવાનગી
+    // 💡 '*' રાખવાથી લોકલહોસ્ટ (localhost:8081) અને બ્રાઉઝરની રિક્વેસ્ટ બ્લોક નહીં થાય
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
@@ -22,6 +28,7 @@ return [
 
     'max_age' => 0,
 
-    // આને 'true' કરવું અનિવાર્ય છે, કારણ કે તમે Cookies/Sanctum વાપરો છો
-    'supports_credentials' => true,
+    // 💡 જ્યારે allowed_origins '*' (વાઇલ્ડકાર્ડ) હોય ત્યારે supports_credentials ને false રાખવું જરૂરી છે
+    'supports_credentials' => false,
+
 ];

@@ -5,7 +5,8 @@ import SplashScreen from './src/screens/SplashScreen.js';
 import LoginScreen from './src/screens/LoginScreen.js';
 import DashboardScreen from './src/screens/DashboardScreen.js'; 
 import QuizScreen from './src/screens/QuizScreen.js'; // ✨ ૧. નવી QuizScreen ફાઇલ અહીં ઇમ્પોર્ટ કરી
-import { SettingsProvider } from './src/context/SettingsContext'; 
+import { SettingsProvider } from './src/context/SettingsContext';
+import LiveVitalsScreen from './src/screens/LiveVitalsScreen'; 
 
 axios.defaults.withCredentials = true;
 
